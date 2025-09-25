@@ -2,11 +2,11 @@
 // Write a function that concatenates two strings without taking ownership, i.e., by borrowing.
 
 fn concat_strings(s1: &String, s2: &String) -> String {
-    let mut result = String::new();
+    let mut result = String::new(); // creating a new string to store the "result"
 
-    result.push_str(s1);
-    result.push_str(s2);
-    result
+    result.push_str(s1); // adds the first string to the result
+    result.push_str(s2); // adds the second string to the result
+    result // returns the concatenates string
 }
 
 // Problem #2: Clone and Modify
@@ -14,9 +14,9 @@ fn concat_strings(s1: &String, s2: &String) -> String {
 // Print both the original string and the cloned, modified string to show that the original has not been changed.
 
 fn clone_and_modify(s: &String) -> String {
-    let mut cloned = s.clone();
-    cloned.push_str("World!");
-    cloned
+    let mut clone = s.clone(); // making a copy of the borrowed string
+    clone.push_str("World!"); // modify word to the cloned string
+    clone // returns the modified cloned string
 }
 
 // Problem #3: Mutable Reference Sum
@@ -24,8 +24,16 @@ fn clone_and_modify(s: &String) -> String {
 
 #[allow(unused_variables, unused_mut)]
 fn sum(total: &mut i32, low: i32, high: i32) {
-    let result: i32 = (low..=high).sum();
-    *total = result;
+    let mut result = 0; // a temp value that stores the sum
+
+    let mut i = low; // start from the lowest value
+
+    while i <= high // going to loop from low to high while adding the number to the result
+    {
+        result = result + i; // adding the current number to the sum
+        i = i+1; // moving to the next number
+    }
+    *total = result; // stores the sum in the varirable pointed by reference
 
 
 }
