@@ -1,0 +1,1 @@
+/workspaces/Rustfall2025/traits_generics_assignment/target/debug/traits_generics_assignment: /workspaces/Rustfall2025/traits_generics_assignment/src/main.rs
